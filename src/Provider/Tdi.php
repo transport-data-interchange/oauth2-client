@@ -1,7 +1,8 @@
 <?php
-
+namespace TDi\OAuth2\Client\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
+use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
@@ -68,15 +69,15 @@ class Tdi extends AbstractProvider
      * @param array|string $data Parsed response data
      *
      * @return void
-     * @throws \League\OAuth2\Client\Provider\Exception\IdentityProviderException
+     * @throws IdentityProviderException
      */
     protected function checkResponse(ResponseInterface $response, $data)
     {
         if(isset($data['error'])) {
             $statusCode = $response->getStatusCode();
-            [$error, 'error_description' => $errorDescription] = $data;
+            ['error' => $error, 'error_description' => $errorDescription] = $data;
             
-            throw new \League\OAuth2\Client\Provider\Exception\IdentityProviderException(
+            throw new IdentityProviderException(
                 sprintf("%s - %s : %s", $statusCode, $errorDescription, $error),
                 $response->getStatusCode(),
                 $response
