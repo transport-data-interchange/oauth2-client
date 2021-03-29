@@ -1,0 +1,22 @@
+{
+    "name": "tdi/oauth2-client",
+    "description": "TDi OAuth 2.0 support for PHP Leagues Oauth 2.0 Client",
+    "type": "library",
+    "require": {
+        "league/oauth2-client": "^2.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "authors": [
+        {
+            "name": "Gareth",
+            "email": "gareth@tdi.tc"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TDi\\Oauth2\\Client\\" : "src/"
+        }
+    }
+}
