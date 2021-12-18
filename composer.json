@@ -1,5 +1,5 @@
 {
-    "name": "tdi/oauth2-client",
+    "name": "tdi/oauth2-tdi",
     "description": "TDi OAuth 2.0 support for PHP Leagues Oauth 2.0 Client",
     "type": "library",
     "require": {
