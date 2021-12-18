@@ -5,7 +5,7 @@ This package provides TDi OAuth 2.0 support for the PHP League's [OAuth 2.0 Clie
 ## Installation
 
 ```
-composer require tdi/oauth2-client
+composer require tdi/oauth2-tdi
 ```
 
 ## Usage
